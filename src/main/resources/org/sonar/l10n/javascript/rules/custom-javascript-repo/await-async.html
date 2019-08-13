@@ -1,0 +1,34 @@
+<p>如果表达式出  await 关键字，则父方法必须使用async修饰 ，否则运行时抛出异常 </p>
+<pre> 
+// Noncompliant 
+function run1() {
+	await waitFiles();
+}
+
+function run2(){
+	waitFiles(function (){
+		await doSomeThing();
+	});
+}
+
+async function run3(){
+	waitFiles(function (){
+		await doSomeThing();
+	});
+}
+</pre>
+
+<p>请使用async function 定义方法</p>
+<pre>
+
+// OK
+async function run4() {
+	await waitFiles();
+}
+
+function run5(){
+	waitFiles(async function (){
+		await doSomeThing();
+	});
+}
+</pre>

@@ -20,8 +20,10 @@
 package org.sonar.samples.javascript;
 
 import org.sonar.plugins.javascript.api.CustomJavaScriptRulesDefinition;
+import org.sonar.samples.javascript.checks.AwaitFunctionUseCheck;
+import org.sonar.samples.javascript.checks.DataGridCellsOperateCheck;
 import org.sonar.samples.javascript.checks.ForbiddenFunctionUseCheck;
-import org.sonar.samples.javascript.checks.OtherForbiddenFunctionUseCheck;
+import org.sonar.samples.javascript.checks.SetTimeoutFunctionUseCheck;
 
 /**
  * Extension point to define a JavaScript rule repository.
@@ -33,7 +35,7 @@ public class JavaScriptCustomRulesDefinition extends CustomJavaScriptRulesDefini
    */
   @Override
   public String repositoryName() {
-    return "MyCompany Custom Repository";
+		return "DCITS自定义JavaScript规则";
   }
 
   /**
@@ -50,6 +52,7 @@ public class JavaScriptCustomRulesDefinition extends CustomJavaScriptRulesDefini
    */
   @Override
   public Class[] checkClasses() {
-    return new Class[] {ForbiddenFunctionUseCheck.class, OtherForbiddenFunctionUseCheck.class};
+		return new Class[] { AwaitFunctionUseCheck.class,
+				SetTimeoutFunctionUseCheck.class, DataGridCellsOperateCheck.class };
   }
 }

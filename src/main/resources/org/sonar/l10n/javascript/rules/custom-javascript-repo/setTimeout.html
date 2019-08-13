@@ -1,0 +1,20 @@
+<p>定时器函数的执行参数使用方法名字符串，其实会使用eval()执行函数 </p>
+<pre> 
+// Noncompliant  
+setTimeout("myFunc()", 1000); 
+setTimeout("myFunc(1, 2, 3)", 1000); 
+
+setInterval("myFunc()", 1000); 
+setInterval("myFunc(1, 2, 3)", 1000); 
+
+</pre>
+
+<p>使用setTimeout定时器时，第一个参数请直接传递function</p>
+<pre>
+// Ok
+setTimeout(myFunc, 1000); 
+setTimeout(function () { myFunc(1, 2, 3); }, 1000);
+
+setInterval(myFunc, 1000); 
+setInterval(function () { myFunc(1, 2, 3); }, 1000);
+</pre>

@@ -13,8 +13,8 @@
 	<inceptionYear>2016</inceptionYear>
 
 	<properties>
-		<javascript.version>3.0.0.4962</javascript.version>
-		<sonar.version>6.2</sonar.version>
+		<javascript.version>3.3.0.5702</javascript.version>
+		<sonar.version>6.3</sonar.version>
 	</properties>
 	<dependencies>
 		<dependency>

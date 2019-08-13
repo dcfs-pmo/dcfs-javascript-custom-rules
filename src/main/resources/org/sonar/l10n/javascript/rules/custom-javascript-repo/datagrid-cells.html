@@ -1,0 +1,12 @@
+<p>不允许直接使用数字下标获取表格列进行操作:</p>
+<ul>
+	<li>datagrid.cells(r,1); // NOK</li>
+	<li>datagrid.cells(r,2); // NOK</li> 
+	<li>datagrid.cells(r,3); // NOK</li>
+</ul>
+<p>请使用ColumnName获取行列索引，进行操作</p>
+<ul>
+	<li>
+		datagrid.cells(r,datagrid.getColIndexById("QUERY_BANK_CODE")); // OK
+	</li>
+</ul>
