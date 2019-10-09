@@ -15,6 +15,7 @@
 	<properties>
 		<javascript.version>3.3.0.5702</javascript.version>
 		<sonar.version>6.3</sonar.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 	<dependencies>
 		<dependency>
